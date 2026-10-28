@@ -11,7 +11,7 @@
 - **Weboldal:** bármely modern böngésző.
 - **Frontend:** Node.js 20.11+ (külső npm-csomagok telepítése nélkül)
 
-## 01 – Konzolos statisztika (15 pont)
+## 01 – Konzolos statisztika
 
 PowerShellben a csomag gyökeréből:
 
@@ -33,7 +33,7 @@ A legtöbbször bérelt yacht: CARPE DIEM (25 bérlés)
 
 A **havi** összeg számításakor a teljes bérleti díj szerepel, ha a bérlés akár egy napra is átnyúlik az adott hónapba. A kezdő- és zárónap is beleszámít az időtartamba. A CSV automatikusan másolódik a futtatási könyvtárba.
 
-## 02 – Desktop költségnyilvántartó (10 pont)
+## 02 – Desktop költségnyilvántartó
 
 ```powershell
 cd .\02_Desktop
@@ -44,11 +44,11 @@ Windows Forms ablak nyílik: 300 eredeti bejegyzés táblázatban, új költség
 
 **Fontos:** a program a futási helyre bemásolt `yacht_koltsegek_2024.csv` fájlt frissíti (jellemzően `02_Desktop\bin\Debug\net8.0-windows\yacht_koltsegek_2024.csv`). Az eredeti `forrasanyag` fájl érintetlen marad. Az új adatok megtartásához a futtatási mappában lévő CSV-t mentsd el.
 
-## 03 – Reszponzív bemutatkozó weboldal (10 pont)
+## 03 – Reszponzív bemutatkozó weboldal
 
 Nyisd meg a `03_Weboldal/index.html` fájlt böngészőben. A `forras.txt` **teljes és pontos angol szövege**, a **3 megadott kép** és az előírt `rgb(114, 221, 120)` zöld szerepel. A navbar 992 px alatt hamburger menüre vált, a képek és szöveg 768 px alatt egymás alá kerülnek. A navbar keresője a feladat szerint itt még csak megjelenítendő elem; az éles kereső az 05-ös részben működik.
 
-## 04 – Web API, ASP.NET Core + SQLite (15 pont)
+## 04 – Web API, ASP.NET Core + SQLite
 
 ```powershell
 cd .\04_WebAPI
@@ -80,7 +80,7 @@ Első indításkor automatikusan létrejön a `04_WebAPI/Data/oceanic_dreams.db`
 
 Az `id` az adatbázisban automatikus; a `totalPrice` számított, **[NotMapped]**. Átfedő foglalásokat ugyanarra a yacht ID-ra nem enged, de más yachtokra azonos időszak megengedett. Az `04_WebAPI/requests.http` használható VS Code REST Client bővítménnyel vagy Visual Studio HTTP-fájl támogatással.
 
-## 05 – Foglalási frontend (15 pont)
+## 05 – Foglalási frontend
 
 **Előbb indítsd el a 04-es API-t**, majd egy másik terminálból:
 
@@ -101,15 +101,3 @@ Az API elindítása után (a csomag gyökeréből):
 ```powershell
 python .\tesztek\api_smoke_test.py
 ```
-
-Ez ideiglenes foglalást készít, lekérdezi, ellenőrzi a szabályokat, majd törli. **A tényleges C# fordítást és a Windows Forms megjelenését a saját Windows-gépen ellenőrizni kell.**
-
-```powershell
-git init
-git add .
-git commit -m "Oceanic Dreams yacht rental assignment"
-git branch -M main
-git remote add origin https://github.com/SAJAT_FELHASZNALO/SAJAT_REPO.git
-git push -u origin main
-```
-
