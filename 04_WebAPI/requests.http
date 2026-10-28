@@ -1,0 +1,26 @@
+@host = http://localhost:5084
+
+### Összes bérlés
+GET {{host}}/api/berlesek
+
+### Nem létező bérlés: 404
+GET {{host}}/api/berlesek/999999
+
+### Példa foglalás - A STARTDATE ÉS ENDDATE LEGYEN A TESZTELÉS NAPJÁHOZ KÉPEST JÖVŐBEN!
+POST {{host}}/api/berlesek
+Content-Type: application/json
+
+{
+  "uid": 101,
+  "yachtId": 7,
+  "startDate": "2027-04-10",
+  "endDate": "2027-04-14",
+  "dailyPrice": 10375,
+  "deposit": 15000
+}
+
+### ID alapú lekérdezés
+GET {{host}}/api/berlesek/1
+
+### ID alapú törlés
+DELETE {{host}}/api/berlesek/1

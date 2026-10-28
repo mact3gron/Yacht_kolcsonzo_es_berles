@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+**/.vs/
+**/Data/*.db
+**/Data/*.db-*
+**/node_modules/
+.DS_Store
+Thumbs.db

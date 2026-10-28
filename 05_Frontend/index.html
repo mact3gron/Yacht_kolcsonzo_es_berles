@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183332">
+  <meta name="description" content="Oceanic Dreams yacht charter and reservations">
+  <title>Yacht Charter | Oceanic Dreams</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="scripts/main.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="container navigation" aria-label="Navigation">
+      <a class="logo" href="index.html"><span class="logo-mark">✦</span> Oceanic Dreams</a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false" type="button">☰</button>
+      <div id="nav-links" class="nav-links"><a href="#fleet">Yacht Charter</a><a href="#reservation">Reservation</a></div>
+      <form id="search-form" class="search-form" role="search">
+        <label class="sr-only" for="search">Search yacht name or builder</label>
+        <input type="search" id="search" placeholder="Search yacht or builder…" autocomplete="off">
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="intro">
+      <span class="eyebrow">OCEANIC DREAMS · PRIVATE CHARTERS</span>
+      <h1>Find your perfect <em>escape.</em></h1>
+      <p>Explore an extraordinary fleet of luxury yachts and make every journey unforgettable.</p>
+    </section>
+    <section class="booking-panel" id="reservation" aria-labelledby="booking-heading">
+      <div class="panel-title">
+        <div><span class="eyebrow">YOUR NEXT ADVENTURE</span><h2 id="booking-heading">Yacht Charter</h2></div>
+        <span class="step-pill">01 / Select a yacht</span>
+      </div>
+      <p id="selection-text" class="selection-text">Choose a yacht from the fleet below to begin your reservation.</p>
+      <form id="booking-form" novalidate>
+        <div class="booking-grid">
+          <label>Yacht<input id="selected-yacht" type="text" value="No yacht selected" readonly aria-readonly="true"></label>
+          <label>Start date<input id="start-date" type="date" required></label>
+          <label>End date<input id="end-date" type="date" required></label>
+          <div class="estimate" aria-live="polite"><small>Estimated total</small><strong id="total-price">—</strong><small id="duration">Select dates</small></div>
+        </div>
+        <div class="booking-actions">
+          <span class="fineprint">Minimum 5 days · Maximum 90 days · Starting tomorrow</span>
+          <button type="submit" id="submit-booking" class="btn btn-primary" disabled>Submit Reservation <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+      <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+    </section>
+    <section id="fleet" class="fleet-section" aria-labelledby="fleet-title">
+      <div class="section-heading"><div><span class="eyebrow">DISCOVER THE FLEET</span><h2 id="fleet-title">Exceptional yachts, <em>unforgettable moments.</em></h2></div><span id="fleet-count" class="fleet-count"></span></div>
+      <p id="loading-status" class="loading-status" role="status">Loading yachts from the live fleet…</p>
+      <div id="yacht-grid" class="yacht-grid" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer>© Oceanic Dreams · Yacht Charter</footer>
+</body>
+</html>
